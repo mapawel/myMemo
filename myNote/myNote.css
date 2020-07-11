@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.note {
+    opacity: 1;
+    margin: 15px 20px;
+    width: 240px;
+    border: 1px solid black;
+    box-shadow: -3px 3px 5px grey;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.yellow {
+    background-color: rgb(253, 245, 98);
+}
+
+.grey {
+    background-color: rgb(231, 231, 221);
+}
+
+.blue {
+    background-color: rgb(185, 245, 255);
+}
+
+.green {
+    background-color: rgb(78, 255, 113);
+}
+
+.orange {
+    background-color: rgb(255, 177, 177);
+}
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, .06);
+}
+
+.note-header .delete-note,
+.note-header .edit-note {
+    background: none;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.note-body {
+    position: relative;
+    padding: 20px 15px;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.note-edit {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px 15px;
+    font-size: 14px;
+}

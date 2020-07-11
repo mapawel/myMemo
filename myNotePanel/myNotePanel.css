@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.note-panel .save,
+.note-panel .cancel {
+    position: relative;
+    flex-shrink: 0;
+    margin: 5px 4px;
+    padding: 10px 12px;
+    background-color: white;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.note-panel .save::before,
+.note-panel .cancel::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 10%, rgba(0, 0, 0, 0.2) 51%, rgba(255, 255, 255, 0) 90%);
+    transform: translate(-130%) skewX(-25deg);
+    transform-origin: right bottom;
+    transition: transform .5s;
+}
+
+.note-panel .save:hover::before,
+.note-panel .cancel:hover::before {
+    transform: translate(150%) skewX(-55deg);
+}
+
+.note-panel {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    padding: 40px 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px black;
+    border-radius: 5px;
+}
+
+.note-panel h2 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.note-panel label {
+    margin-bottom: 10px;
+}
+
+.note-panel #text,
+.note-panel #category {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 90%;
+    max-height: 600px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.note-panel .error {
+    margin-bottom: 20px;
+    color: red;
+    visibility: hidden;
+}

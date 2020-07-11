@@ -1,0 +1,38 @@
+.menu-buttons {
+    position: relative;
+    top: none;
+    left: none;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    background-color: transparent;
+}
+
+.menu button {
+    width: auto;
+    padding: 10px 12px;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
+    font-size: 10px;
+}
+
+.menu button::before {
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 10%, rgba(0, 0, 0, 0.2) 51%, rgba(255, 255, 255, 0) 90%);
+}
+
+button.burger {
+    display: none;
+}
+
+button.empty-bin {
+    color: orange;
+}
+
+button.reset {
+    color: red;
+}

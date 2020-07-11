@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, .9);
+    box-shadow: 0 -5px 8px black;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+h1 i {
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.menu-buttons {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, .9);
+}
+
+.menu-buttons.active {
+    display: flex;
+    animation: menuAnim .5s;
+}
+
+@keyframes menuAnim {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.menu button {
+    position: relative;
+    width: 240px;
+    margin: 10px 4px;
+    padding: 15px 12px;
+    background: none;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0 0 8px rgba(240, 240, 240, .5);
+    border-radius: 5px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.menu button::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 10%, rgba(240, 240, 240, .5) 51%, rgba(255, 255, 255, 0) 90%);
+    transform: translate(-130%) skewX(-25deg);
+    transform-origin: right bottom;
+    transition: transform .5s;
+}
+
+.menu button:hover::before {
+    transform: translate(150%) skewX(-55deg);
+}
+
+button.burger {
+    position: relative;
+    width: 40px;
+    margin-left: auto;
+    border: none;
+    background: none;
+    overflow: hidden;
+}
+
+button.burger span {
+    position: absolute;
+    left: 50%;
+    height: 2px;
+    width: 28px;
+    transform: translateX(-50%);
+    background-color: black;
+    transition: background-color .3s, transform .3s;
+}
+
+button.burger span:first-child {
+    top: 15%;
+}
+
+button.burger span:nth-child(2) {
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button.burger span:last-child {
+    bottom: 15%;
+}
+
+button.burger.active span {
+    background-color: white;
+}
+
+button.burger.active span:first-child {
+    transform: translate(-50%, 9px) rotate(45deg);
+}
+
+button.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+button.burger.active span:last-child {
+    transform: translate(-50%, -9px) rotate(-45deg);
+}
+
+button.empty-bin {
+    color: orange;
+}
+
+button.reset {
+    color: red;
+}

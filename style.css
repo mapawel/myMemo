@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Quicksand', sans-serif;
+    background-color: rgb(243, 243, 243);
+}
+
+
+.note-area {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-wrap: wrap;
+    padding: 20px;
+    padding-top: 70px;
+}
+
+.note-area.active {
+    z-index: 0;
+}
