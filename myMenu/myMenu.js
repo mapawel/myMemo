@@ -12,9 +12,10 @@ menuTemplate.innerHTML = `
                 <button id="addNote" class="add icon"><i class="fa fa-plus"></i> DODAJ</button>
                 <button id="delAll" class="delete-all icon"><i class="fa fa-times"></i> WSZYSTKO DO KOSZA</button>
                 <button id="restore" class="restore-chosen icon"><i class="fa fa-reply-all"></i> PRZYWRÓĆ Z KOSZA</button>
-                <button id="eraseBin" class="empty-bin icon"><i class="fa fa-trash-o"></i> OPRÓŻNIJ KOSZ</button>
-                <button id="reset" class="reset icon"><i class="fa fa-exclamation-triangle"></i> RESET</button>
+                
+                <button id="openReset" class="reset icon"><i class="fa fa-exclamation-triangle"></i> RESET</button>
                 <button id="help" class="help icon"><i class="fa fa-question"></i></button>
+                <button id="color" class="color icon">color</button>
             </div>
         </div>
     </div>

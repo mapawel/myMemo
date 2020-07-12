@@ -1,3 +1,8 @@
+:root {
+    --first-color: rgb(0, 0, 0);
+    --second-color: rgb(240, 240, 240);
+}
+
 .menu-buttons {
     position: relative;
     top: none;
@@ -16,23 +21,16 @@
 .menu button {
     width: auto;
     padding: 10px 12px;
-    color: rgb(0, 0, 0);
-    border: 1px solid rgb(0, 0, 0);
+    color: var(--first-color);
+    border: 1px solid var(--first-color);
     font-size: 10px;
 }
 
 .menu button::before {
-    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 10%, rgba(0, 0, 0, 0.2) 51%, rgba(255, 255, 255, 0) 90%);
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 10%, var(--first-color) 51%, rgba(255, 255, 255, 0) 90%);
 }
 
 button.burger {
     display: none;
 }
 
-button.empty-bin {
-    color: orange;
-}
-
-button.reset {
-    color: red;
-}

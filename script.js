@@ -19,6 +19,9 @@ import {
 import {
     MyNote
 } from './myNote/myNote.js';
+import {
+    MyAcceptBox
+} from './myAcceptBox/myAcceptBox.js';
 
 export let notesDB = new Array;
 window.notesDB = notesDB;
@@ -27,6 +30,7 @@ let cid;
 let txt;
 let id;
 let clickedNoteNr;
+const root = document.documentElement;
 
 const editNote = () => {
     renderNotes();
@@ -88,6 +92,10 @@ const eraseBin = () => {
     window.notesDB = notesDB;
 }
 
+const openReset = () => {
+    document.body.appendChild(document.createElement('my-accept-box'));
+}
+
 const reset = () => {
     notesDB.forEach(note => note.remove());
     notesDB = new Array;
@@ -111,6 +119,16 @@ const toggleMenu = () => {
 const menuBurger = () => {
     toggleMenu();
     document.querySelector('my-menu').shadowRoot.querySelector('.menu-buttons').addEventListener('click', toggleMenu)
+}
+
+const color = () => {
+    if (root.style.getPropertyValue('--first-color') == 'rgb(240, 240, 240)') {
+        root.style.setProperty('--first-color', 'rgb(0, 0, 0)')
+        root.style.setProperty('--second-color', 'rgb(240, 240, 240)')
+    } else {
+        root.style.setProperty('--first-color', 'rgb(240, 240, 240)')
+        root.style.setProperty('--second-color', 'rgb(30, 30, 30)')
+    }
 }
 
 
@@ -139,6 +157,7 @@ addEventListener('myNote', e => {
 });
 
 addEventListener('myRestorePanel', e => eval(e.detail.fooInit)());
+addEventListener('myAcceptBox', e => eval(e.detail.fooInit)());
 
 
 const loadNotes = (cat, cid, status, txt, id) => {

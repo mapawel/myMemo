@@ -1,7 +1,13 @@
+:root {
+    --first-color: rgb(0, 0, 0);
+    --second-color: rgb(240, 240, 240);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    color: var(--first-color);
 }
 
 .info-content {
@@ -12,7 +18,7 @@ button {
     padding: 8px 25px;
     width: 180px;
     background: none;
-    border: 1px solid #999;
+    border: 1px solid var(--first-color);
     border-radius: 5px;
     font-size: 10px;
 }
@@ -21,7 +27,6 @@ p {
     font-size: 14px;
     margin: 20px 0;
 }
-
 
 .info-box {
     display: none;
@@ -36,8 +41,8 @@ p {
     padding: 40px 40px 0;
     width: 90%;
     max-width: 600px;
-    background-color: #fff;
-    box-shadow: 0 0 10px black;
+    background-color: var(--second-color);
+    box-shadow: 0 0 10px var(--first-color);
     border-radius: 5px;
     cursor: pointer;
 }
@@ -49,13 +54,6 @@ p {
 
 .info-box h3:last-of-type {
     margin-top: 30px;
-}
-
-
-.restre-panel .error {
-    margin-bottom: 20px;
-    color: red;
-    visibility: hidden;
 }
 
 button.empty-bin {

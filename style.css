@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+:root {
+    --first-color: rgb(0, 0, 0);
+    --second-color: rgb(240, 240, 240);
+}
+
 
 * {
     box-sizing: border-box;
@@ -9,7 +14,7 @@
 body {
     height: 100vh;
     font-family: 'Quicksand', sans-serif;
-    background-color: rgb(243, 243, 243);
+    background-color: var(--second-color);
 }
 
 

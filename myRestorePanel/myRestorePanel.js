@@ -6,6 +6,7 @@ export const myRestorePanelOB = document.querySelector('my-restore-panel');
 
 const restorePanelTemplate = document.createElement('template');
 restorePanelTemplate.innerHTML = `
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="myRestorePanel/myRestorePanel.css">
 <style>
 </style>
@@ -17,6 +18,7 @@ restorePanelTemplate.innerHTML = `
 <div class="panel-buttons">
 <button id="restore" class="restore icon"><i class="fa fa-save"></i> Przywróć</button>
 <button id="closeRestore" class="cancel icon"><i class="fa fa-times"></i> Anuluj</button>
+<button id="eraseBin" class="empty-bin icon"><i class="fa fa-trash-o"></i> OPRÓŻNIJ KOSZ</button>
 </div>
 </div>
 `;
@@ -37,6 +39,7 @@ export class MyRestorePanel extends HTMLElement {
 
         const restoreBtn = this.shadowRoot.querySelector('#restore');
         const closeRestoreBtn = this.shadowRoot.querySelector('#closeRestore');
+        const eraseBinBtn = this.shadowRoot.querySelector('#eraseBin');
         const closeRestorePanel = () => this.setAttribute('display', '0');
 
         restoreBtn.addEventListener('click', () => {
@@ -57,6 +60,18 @@ export class MyRestorePanel extends HTMLElement {
 
         closeRestoreBtn.addEventListener('click', () => {
             this.shadowRoot.querySelectorAll('[toRestore = true]').forEach(note => note.removeAttribute('toRestore'));
+            closeRestorePanel();
+        });
+
+        eraseBinBtn.addEventListener('click', () => {
+
+            this.dispatchEvent(new CustomEvent('myRestorePanel', {
+                bubbles: true,
+                composed: true,
+                detail: {
+                    fooInit: 'eraseBin'
+                }
+            }))
             closeRestorePanel();
         });
     }
@@ -89,10 +104,12 @@ export class MyRestorePanel extends HTMLElement {
             if (notesDB.filter(note => note.status == 'deleted').length == 0) {
                 this.shadowRoot.querySelector('#restorePanelHeader').innerText = 'brak notatek w koszu';
                 this.shadowRoot.querySelector('#restore').style.display = 'none';
+                this.shadowRoot.querySelector('#eraseBin').style.display = 'none';
                 this.shadowRoot.querySelector('#closeRestore').innerText = 'OK';
             } else {
                 this.shadowRoot.querySelector('#restorePanelHeader').innerText = 'Zaznacz elementy do przywrócenia';
                 this.shadowRoot.querySelector('#restore').style.display = 'inline-block';
+                this.shadowRoot.querySelector('#eraseBin').style.display = 'block';
                 this.shadowRoot.querySelector('#closeRestore').innerText = 'Anuluj';
             };
 
