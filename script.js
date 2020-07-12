@@ -147,7 +147,7 @@ const loadNotes = (cat, cid, status, txt, id) => {
     renderNotes();
 };
 
-if (JSON.parse(localStorage.getItem('savedNotes')).length > 0) {
+if (JSON.parse(localStorage.getItem('savedNotes'))) {
     JSON.parse(localStorage.getItem('savedNotes')).forEach(note => loadNotes(note.cat, note.cid, note.status, note.txt, note.nr))
     id = JSON.parse(localStorage.getItem('savedNotes')).length + 1;
 } else id = 1;
