@@ -3,6 +3,10 @@
     --second-color: rgb(240, 240, 240);
 }
 
+h1 {
+    font-size: 34px;
+}
+
 .menu-buttons {
     position: relative;
     top: none;
@@ -20,6 +24,7 @@
 
 .menu button {
     width: auto;
+    margin: 0 4px;
     padding: 10px 12px;
     color: var(--first-color);
     border: 1px solid var(--first-color);
@@ -34,3 +39,11 @@ button.burger {
     display: none;
 }
 
+button.reset {
+    color: red;
+}
+
+button.color {
+    border: none;
+    box-shadow: none;
+}

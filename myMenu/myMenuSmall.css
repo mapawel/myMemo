@@ -19,18 +19,21 @@
 
 .wrapper {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
     flex-wrap: nowrap;
     max-width: 1300px;
     margin: 0 auto;
-    padding: 10px 20px;
+    padding: 7px 20px;
 }
 
 h1 i {
     margin-top: 5px;
-    margin-right: 10px;
+    margin-right: 7px;
 }
 
 h1 {
+    font-size: 30px;
     color: var(--first-color);
 }
 
@@ -73,6 +76,7 @@ h1 {
     color: var(--first-color);
     border: 1px solid var(--first-color);
     border-radius: 5px;
+    box-shadow: 0 0 4px rgba(150, 150, 150, .6);
     font-size: 12px;
     letter-spacing: 1px;
     overflow: hidden;
@@ -102,6 +106,7 @@ h1 {
     0% {
         transform: translate(-130%) skewX(-25deg);
     }
+
     100% {
         transform: translate(150%) skewX(-55deg);
     }
@@ -110,9 +115,11 @@ h1 {
 button.burger {
     position: relative;
     width: 40px;
-    margin-left: auto;
+    height: 30px;
+    padding-left: 40px;
     border: none;
     background: none;
+    box-shadow: none;
     overflow: hidden;
 }
 
@@ -153,4 +160,53 @@ button.burger.active span:last-child {
 
 button.reset {
     color: red;
+}
+
+button.color {
+    width: auto;
+    margin-left: auto;
+    padding: 0 20px;
+    border: none;
+    box-shadow: none;
+}
+
+button.color::before {
+    width: 0;
+    height: 0;
+
+}
+
+button.color:focus {
+    outline: none;
+}
+
+button.color:focus>.switcher {
+    background-color: grey;
+}
+
+button.color p {
+    font-size: 8px;
+}
+
+button.color .switcher {
+    position: relative;
+    margin: 3px auto 0;
+    width: 35px;
+    height: 16px;
+    border-radius: 10px;
+    border: 1px solid var(--first-color);
+    z-index: 0;
+    background-color: transparent;
+}
+
+button.color .knob {
+    position: absolute;
+    z-index: 1;
+    top: 1px;
+    left: 1px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--first-color);
+    transition: transform .2s;
 }

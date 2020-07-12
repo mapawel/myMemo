@@ -7,16 +7,21 @@ menuTemplate.innerHTML = `
     <div class="menu">
         <div class="wrapper">
             <h1><i class="fa fa-lightbulb-o"></i> myMemo</h1>
-            <button id="menuBurger" class="burger"><span></span><span></span><span></span></button>
             <div class="menu-buttons">
                 <button id="addNote" class="add icon"><i class="fa fa-plus"></i> DODAJ</button>
                 <button id="delAll" class="delete-all icon"><i class="fa fa-times"></i> WSZYSTKO DO KOSZA</button>
                 <button id="restore" class="restore-chosen icon"><i class="fa fa-reply-all"></i> PRZYWRÓĆ Z KOSZA</button>
-                
                 <button id="openReset" class="reset icon"><i class="fa fa-exclamation-triangle"></i> RESET</button>
                 <button id="help" class="help icon"><i class="fa fa-question"></i></button>
-                <button id="color" class="color icon">color</button>
             </div>
+            <button id="color" class="color icon">
+            <p>mode <i>DARK</i></p>
+            <div class="switcher">
+                <div class="knob">
+                </div>
+            </div>
+            </button>
+            <button id="menuBurger" class="burger"><span></span><span></span><span></span></button>
         </div>
     </div>
 `;

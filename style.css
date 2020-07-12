@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
 :root {
     --first-color: rgb(0, 0, 0);
     --second-color: rgb(240, 240, 240);
@@ -26,7 +27,7 @@ body {
     align-items: start;
     flex-wrap: wrap;
     padding: 20px;
-    padding-top: 70px;
+    padding-top: 80px;
 }
 
 .note-area.active {

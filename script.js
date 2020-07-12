@@ -123,11 +123,15 @@ const menuBurger = () => {
 
 const color = () => {
     if (root.style.getPropertyValue('--first-color') == 'rgb(240, 240, 240)') {
-        root.style.setProperty('--first-color', 'rgb(0, 0, 0)')
-        root.style.setProperty('--second-color', 'rgb(240, 240, 240)')
+        root.style.setProperty('--first-color', 'rgb(0, 0, 0)');
+        root.style.setProperty('--second-color', 'rgb(240, 240, 240)');
+        document.querySelector('my-menu').shadowRoot.querySelector('.knob').style.transform = 'translateX(0)';
+        document.querySelector('my-menu').shadowRoot.querySelector('.color p').innerHTML = 'mode <i>DARK</i>'
     } else {
-        root.style.setProperty('--first-color', 'rgb(240, 240, 240)')
-        root.style.setProperty('--second-color', 'rgb(30, 30, 30)')
+        root.style.setProperty('--first-color', 'rgb(240, 240, 240)');
+        root.style.setProperty('--second-color', 'rgb(30, 30, 30)');
+        document.querySelector('my-menu').shadowRoot.querySelector('.knob').style.transform = 'translateX(18px)';
+        document.querySelector('my-menu').shadowRoot.querySelector('.color p').innerHTML = '<i>LIGHT</i> mode'
     }
 }
 
